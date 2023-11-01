@@ -5,34 +5,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A8CEF0">
+    android:background="#A8CEF0"
+    tools:context=".WelcomeView">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <!--<androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal">-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ToDoDo"
-            android:textSize="70sp"
+            android:id="@+id/title"
+            android:textSize="70dp"
+            android:textColor="@color/black"
             android:fontFamily="@font/dotrix"
-            app:layout_constraintTop_toBottomOf="@id/top" />
+            app:layout_constraintTop_toBottomOf="@id/top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/placeholder"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/placeholder"/>
+            android:text="get started!"
+            android:textColor="@color/black"
+            android:fontFamily="@font/dotrix"
+            android:backgroundTint="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/belowImg"
+            android:onClick="toTasks"/>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/top"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10"/>
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/midVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/belowImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
